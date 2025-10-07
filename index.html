@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muhammad Junaid, SSM | Project Manager</title>
+    <title>Muhammad Junaid | Agile Program Management & Digital Transformation</title>
     <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -13,6 +13,7 @@
             font-family: 'Inter', sans-serif;
             background-color: #0d1117; /* Dark background matching the theme */
             color: #c9d1d9; /* Light text color for contrast */
+            padding-top: 5rem; /* Space for the fixed sidebar */
         }
         /* Custom scrollbar to match dark theme */
         ::-webkit-scrollbar {
@@ -25,346 +26,292 @@
         ::-webkit-scrollbar-track {
             background: #161b22;
         }
-        /* Style for the sticky nav link on active section */
-        .active-nav-link {
-            color: #58a6ff; /* A bright, professional accent color */
-            border-bottom: 2px solid #58a6ff;
+        /* Highlight color */
+        .text-accent {
+            color: #58a6ff;
         }
-        /* Utility for experience timeline dot */
-        .timeline-dot::before {
-            content: '';
-            position: absolute;
-            left: -1.75rem; /* Adjust based on padding/margin */
-            top: 0.5rem;
-            width: 0.75rem;
-            height: 0.75rem;
+        .bg-accent {
             background-color: #58a6ff;
-            border-radius: 50%;
-            z-index: 10;
         }
-        /* Utility for experience timeline line */
-        .timeline-item:not(:last-child) {
-            border-left: 2px solid #30363d;
-            margin-left: -0.125rem;
+        /* Layout fix for mobile/tablet */
+        @media (max-width: 1024px) {
+            body {
+                padding-top: 0; 
+            }
+            #fixed-sidebar {
+                position: relative;
+                width: 100%;
+                height: auto;
+                padding-bottom: 2rem;
+            }
+            #main-content {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            .nav-link {
+                display: none; /* Hide main links on mobile, keep them in the Hero/Contact */
+            }
         }
+
     </style>
 </head>
 
 <body class="antialiased">
 
-    <!-- Sticky Navigation Bar -->
-    <nav id="nav-bar" class="sticky top-0 z-50 bg-[#0d1117]/95 backdrop-blur-sm shadow-xl border-b border-gray-800">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-3">
-            <div class="flex justify-between items-center h-10">
-                <a href="#hero" class="text-xl font-bold text-[#58a6ff] hover:text-white transition duration-300">
-                    M. Junaid
+    <div class="lg:flex lg:h-screen">
+        
+        <!-- Fixed Left Sidebar (Navigation & Intro - Analogous to najumwani.com's structure) -->
+        <header id="fixed-sidebar" class="lg:w-1/3 lg:fixed lg:top-0 lg:left-0 lg:h-full lg:overflow-y-auto p-8 lg:p-12 xl:p-20 flex flex-col justify-between border-b lg:border-r border-gray-800 bg-[#0d1117]">
+            <div class="flex flex-col space-y-8">
+                <div class="mb-8">
+                    <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight text-white mb-2">
+                        Muhammad Junaid, <span class="text-accent">SSM</span>
+                    </h1>
+                    <h2 class="text-xl sm:text-2xl font-light text-gray-400 mb-6">
+                        Agile Program & Project Manager
+                    </h2>
+                    <p class="text-lg text-gray-300 max-w-md">
+                        8+ years of expertise driving digital transformation and delivering high-value, enterprise-scale products using SAFe, Scrum, and Kanban.
+                    </p>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:block">
+                    <ul class="space-y-3">
+                        <li><a href="#about" class="nav-link text-lg font-medium text-gray-400 hover:text-white transition duration-200 block py-1">ABOUT</a></li>
+                        <li><a href="#experience" class="nav-link text-lg font-medium text-gray-400 hover:text-white transition duration-200 block py-1">EXPERIENCE</a></li>
+                        <li><a href="#skills" class="nav-link text-lg font-medium text-gray-400 hover:text-white transition duration-200 block py-1">SKILLS</a></li>
+                        <li><a href="#education" class="nav-link text-lg font-medium text-gray-400 hover:text-white transition duration-200 block py-1">EDUCATION</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Social Links & Contact Info -->
+            <div class="mt-8 lg:mt-0 pt-6 border-t border-gray-800">
+                <div class="flex items-center space-x-4 text-gray-400 text-lg">
+                    <!-- LinkedIn Link -->
+                    <a href="https://www.linkedin.com/in/muh-junaid/" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition duration-200" title="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.522-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    </a>
+                    <!-- Email Link -->
+                    <a href="mailto:moejunaid2@gmail.com" class="hover:text-accent transition duration-200" title="Email">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3v18h24v-18h-24zm21.518 0l-9.518 7.713-9.518-7.713h19.036zm-19.518 15.643v-12.793l.302.245 11.698 9.499 11.698-9.499.302-.245v12.793h-24z"/></svg>
+                    </a>
+                    <!-- Phone - just text since it's a number -->
+                    <span class="text-sm">516-937-8135</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Scrolling Content Area -->
+        <main id="main-content" class="lg:w-2/3 lg:ml-1/3 p-8 lg:p-12 xl:p-20 pt-10">
+
+            <!-- Mobile Intro (Hidden on Desktop) -->
+            <section class="lg:hidden mb-12">
+                <div class="text-3xl font-bold text-white mb-4">Muhammad Junaid</div>
+                <p class="text-lg text-gray-400">Agile Program & Project Manager, SSM</p>
+                <a href="#experience" class="bg-accent hover:bg-[#4a8cd6] text-[#0d1117] font-bold py-2 px-4 rounded-lg mt-4 inline-block transition duration-300">
+                    View Experience
                 </a>
-                <div class="hidden sm:flex space-x-6 text-sm font-medium">
-                    <a href="#about" class="nav-link hover:text-[#58a6ff] transition duration-200" data-section="about">About</a>
-                    <a href="#experience" class="nav-link hover:text-[#58a6ff] transition duration-200" data-section="experience">Experience</a>
-                    <a href="#skills" class="nav-link hover:text-[#58a6ff] transition duration-200" data-section="skills">Skills</a>
-                    <a href="#contact" class="nav-link hover:text-[#58a6ff] transition duration-200" data-section="contact">Contact</a>
-                </div>
-            </div>
-        </div>
-    </nav>
-    
-    <main class="container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 pt-10 pb-20">
-
-        <!-- 1. Hero Section -->
-        <section id="hero" class="min-h-[50vh] flex flex-col justify-center items-start text-left mb-24 pt-16" data-section="hero">
-            <p class="text-lg text-[#58a6ff] mb-4 font-semibold uppercase tracking-widest">
-                Hello, I'm
-            </p>
-            <h1 class="text-5xl sm:text-7xl font-extrabold leading-tight text-white mb-4">
-                Muhammad Junaid, <span class="text-[#58a6ff]">SSM</span>.
-            </h1>
-            <h2 class="text-3xl sm:text-4xl font-light text-gray-400 mb-6">
-                Agile Project & Program Manager
-            </h2>
-            <p class="text-xl max-w-3xl text-gray-300">
-                8+ years of experience driving digital transformation and delivering enterprise-scale projects in SaaS and B2B environments. Passionate about strategic planning, Agile leadership, and optimizing product delivery.
-            </p>
-            <div class="mt-8 flex space-x-4">
-                <a href="#experience" class="bg-[#58a6ff] hover:bg-[#4a8cd6] text-[#0d1117] font-bold py-3 px-6 rounded-lg transition duration-300 shadow-lg">
-                    View My Work
-                </a>
-                <a href="mailto:moejunaid2@gmail.com" class="border border-[#58a6ff] text-[#58a6ff] hover:bg-[#58a6ff]/10 font-bold py-3 px-6 rounded-lg transition duration-300">
-                    Get in Touch
-                </a>
-            </div>
-        </section>
-
-        <!-- Horizontal Rule -->
-        <div class="border-t border-gray-800 mb-24"></div>
-
-
-        <!-- 2. About/Summary Section -->
-        <section id="about" class="mb-24" data-section="about">
-            <h3 class="text-3xl font-bold text-white mb-8 border-b-2 border-[#58a6ff] inline-block pb-1">About Me</h3>
-            <div class="bg-[#161b22] p-8 rounded-xl shadow-2xl">
-                <p class="text-xl leading-relaxed text-gray-300">
-                    With over eight years of experience, I excel at bridging the gap between technical requirements and strategic business outcomes. My expertise is rooted in implementing Agile frameworks like SAFe, Scrum, and Kanban to boost efficiency and accelerate delivery in complex enterprise settings, resulting in measurable business growth and process optimization.
-                </p>
-                <p class="text-xl leading-relaxed text-gray-300 mt-4">
-                    I thrive on leading cross-functional teams, focusing on change management, and leveraging data-driven insights through tools like Jira, ServiceNow, and Datadog. I am committed to mentorship, strategic planning, and ensuring every project aligns perfectly with the overarching product vision and business goals.
-                </p>
-            </div>
-        </section>
-
-        <!-- Horizontal Rule -->
-        <div class="border-t border-gray-800 mb-24"></div>
-
-        <!-- 3. Experience Section (Timeline) -->
-        <section id="experience" class="mb-24" data-section="experience">
-            <h3 class="text-3xl font-bold text-white mb-12 border-b-2 border-[#58a6ff] inline-block pb-1">Experience</h3>
-            <div class="space-y-12 relative">
-
-                <!-- Role 1: Information Security & Technology Project Manager -->
-                <div class="timeline-item relative pl-8">
-                    <div class="timeline-dot"></div>
-                    <p class="text-sm uppercase tracking-wider text-[#58a6ff]">Mar 2024 - Present</p>
-                    <h4 class="text-2xl font-semibold text-white mt-1">Information Security & Technology Project Manager (Contract)</h4>
-                    <p class="text-lg text-gray-400 mb-3">University of Maryland Medical System</p>
-                    <ul class="list-disc list-outside space-y-2 text-gray-300 ml-5">
-                        <li>Delivered 4 concurrent enterprise-scale projects in a scaled Agile environment, ensuring on-time delivery and alignment with business objectives.</li>
-<li>Mentored and coached interns and junior project manager, fostering professional growth and improving team delivery capability.</li>
-<li>Created a centralized reporting dashboard that provides information on KPIs across all projects, enabling leadership to make informed decisions about resource allocation.</li> 
-<li>Increased product development efficiency by 50% through implementing Agile practices, including PI planning, sprint planning, and backlog refinement using Smartsheet.</li>
-<li>Defined product vision and implemented Cority platform, improving onboarding processes and increasing new hire retention by 15%.</li>
-
-                    </ul>
-                </div>
-
-                <!-- Role 2: IT & Services Project Manager -->
-                <div class="timeline-item relative pl-8">
-                    <div class="timeline-dot"></div>
-                    <p class="text-sm uppercase tracking-wider text-[#58a6ff]">Jan 2022 - Nov 2023</p>
-                    <h4 class="text-2xl font-semibold text-white mt-1">IT & Services Project Manager</h4>
-                    <p class="text-lg text-gray-400 mb-3">Northwell Health</p>
-                    <ul class="list-disc list-outside space-y-2 text-gray-300 ml-5">
-                        <li>Managed product backlog and sprint planning for 3 large-scale digital transformation initiatives, increasing project efficiency by 20%.</li>
-<li>Drove product vision for Pharmacy Warehouse systems, contributing to $106M in revenue growth.</li>
-<li>Facilitated product demos and stakeholder reviews, ensuring continuous alignment between business needs and development outcomes.</li>
-<li>Implemented data-driven product metrics to track adoption and performance, identifying opportunities for feature enhancement.</li>
-
-                    </ul>
-                </div>
-
-                <!-- Role 3: Project Manager -->
-                <div class="timeline-item relative pl-8">
-                    <div class="timeline-dot"></div>
-                    <p class="text-sm uppercase tracking-wider text-[#58a6ff]">Mar 2021 - Jan 2022</p>
-                    <h4 class="text-2xl font-semibold text-white mt-1">Project Manager</h4>
-                    <p class="text-lg text-gray-400 mb-3">Altice USA</p>
-                    <ul class="list-disc list-outside space-y-2 text-gray-300 ml-5">
-                        <li>Established product backlog management processes using JIRA, implementing Kanban boards that increased team efficiency by 15%.</li>
-<li>Defined and prioritized product features for Optimum Mobile e-commerce platform, contributing to 18.1% YoY growth to $23.8M.</li>
-<li>Led A/B testing initiatives and data analysis to validate user requirements and inform product decisions.</li>
-<li>Collaborated with UX teams to develop wireframes and user flows, conducting beta testing that enhanced overall user experience.</li>
-<li>Facilitated sprint planning and backlog refinement sessions, ensuring alignment between product roadmap and business objectives.</li>
-
-                    </ul>
-                </div>
-                
-                <!-- Role 4: Software Engineer/Scrum Master -->
-                <div class="timeline-item relative pl-8">
-                    <div class="timeline-dot"></div>
-                    <p class="text-sm uppercase tracking-wider text-[#58a6ff]">Mar 2019 - Mar 2021</p>
-                    <h4 class="text-2xl font-semibold text-white mt-1">Software Engineer/Scrum Master</h4>
-                    <p class="text-lg text-gray-400 mb-3">UltraLinq Healthcare Solutions, Inc.</p>
-                    <ul class="list-disc list-outside space-y-2 text-gray-300 ml-5">
-                        <li>Spearheaded product strategy for healthcare SaaS platform, integrating OHIF Viewer to develop a DICOM viewer with 3D capabilities, driving $3.6M in revenue.</li>
-<li>Translated technical requirements (infrastructure-as-code, DevOps) into product features, reducing deployment cycles by 25%.</li>
-<li>Designed KPI dashboards to monitor product adoption, enabling iterative updates that boosted customer satisfaction by 30%.</li>
-                    </ul>
-                </div>
-                <!-- Role 5: Technical Program Manager/Scrum Master (Added) -->
-                <div class="timeline-item relative pl-8">
-                    <div class="timeline-dot"></div>
-                    <p class="text-sm uppercase tracking-wider text-[#58a6ff]">Jun 2016 - Mar 2019</p>
-                    <h4 class="text-2xl font-semibold text-white mt-1">Technical Program Manager/Scrum Master</h4>
-                    <p class="text-lg text-gray-400 mb-3">Navrexa Pharmacy</p>
-                    <ul class="list-disc list-outside space-y-2 text-gray-300 ml-5">
-                        <li>Drove product development lifecycle from vision to implementation, growing business revenue to over $1M.</li>
-<li>Created user stories and requirements for API integration layer, increasing connection speed by 60% and streamlining data manipulation by 75%.</li>
-<li>Implemented Agile tools (JIRA, Confluence) to improve product backlog management, resulting in 15% enhancement in product delivery.</li>
-                    </ul>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Horizontal Rule -->
-        <div class="border-t border-gray-800 mb-24"></div>
-
-        <!-- 4. Skills Section -->
-        <section id="skills" class="mb-24" data-section="skills">
-            <h3 class="text-3xl font-bold text-white mb-8 border-b-2 border-[#58a6ff] inline-block pb-1">Core Skills & Technologies</h3>
+            </section>
             
-            <div class="space-y-8">
+            <!-- 1. About Section -->
+            <section id="about" class="mb-24">
+                <h3 class="text-xl font-bold text-white mb-4 lg:hidden">ABOUT</h3>
+                <p class="text-lg leading-relaxed text-gray-300 mb-4">
+                    As a certified SAFe Scrum Master (SSM) with over eight years in high-stakes environments, I specialize in translating complex business needs into tangible, high-impact digital solutions. My focus is on implementing rigorous Agile governance (SAFe, Scrum) to boost cross-functional delivery velocity and ensure enterprise projects are delivered on time and on budget.
+                </p>
+                <p class="text-lg leading-relaxed text-gray-300">
+                    I leverage a unique background blending technical expertise (C++, Angular, DevOps familiarity) with strategic program leadership. This allows me to lead technical teams effectively, drive product vision, and optimize processes using tools like Jira, ServiceNow, and Datadog, consistently achieving significant revenue growth and efficiency gains.
+                </p>
+            </section>
+
+            <!-- 2. Experience Section -->
+            <section id="experience" class="mb-24">
+                <h3 class="text-xl font-bold text-white mb-8">EXPERIENCE</h3>
                 
-                <!-- Core Competencies -->
-                <div>
-                    <h4 class="text-xl font-semibold text-[#58a6ff] mb-4">Core Competencies</h4>
-                    <div class="flex flex-wrap gap-3">
-                        <span class="skill-pill">Digital Transformation</span>
-                        <span class="skill-pill">Agile Leadership (Scrum, SAFe)</span>
-                        <span class="skill-pill">Program & Portfolio Management</span>
-                        <span class="skill-pill">Change Management</span>
-                        <span class="skill-pill">Strategic Planning</span>
-                        <span class="skill-pill">Cross-Functional Team Leadership</span>
-                        <span class="skill-pill">Risk & Compliance Management</span>
-                        <span class="skill-pill">Contract Negotiation</span>
+                <div class="space-y-10">
+
+                    <!-- Role 1: UMMS -->
+                    <div class="group py-4 border-b border-gray-800 hover:bg-[#161b22] transition duration-300 p-4 -mx-4 rounded-lg">
+                        <p class="text-sm font-semibold uppercase tracking-wider text-accent mb-1">Mar 2024 - Present</p>
+                        <h4 class="text-2xl font-semibold text-white mt-0 mb-1">Information Security & Technology Project Manager</h4>
+                        <p class="text-base font-light text-gray-400 mb-3">University of Maryland Medical System (Contract)</p>
+                        <ul class="list-disc space-y-2 text-gray-300 ml-5 text-base">
+                            <li>Scaled Agile Delivery: Successfully managed and delivered 4 concurrent enterprise-scale projects within a stringent SAFe environment, ensuring strict alignment with security and compliance objectives.</li>
+                            <li>Process Optimization: Implemented Agile practices including PI planning and backlog refinement using Smartsheet, accelerating product development efficiency by 50%.</li>
+                            <li>Technical Implementation: Defined product vision and led the rollout of the Cority platform for critical onboarding processes, improving new hire retention by 15%.</li>
+                            <li>KPI Governance: Developed a centralized reporting dashboard for leadership, providing real-time KPI visibility for informed resource allocation decisions.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Role 2: Northwell Health -->
+                    <div class="group py-4 border-b border-gray-800 hover:bg-[#161b22] transition duration-300 p-4 -mx-4 rounded-lg">
+                        <p class="text-sm font-semibold uppercase tracking-wider text-accent mb-1">Jan 2022 - Nov 2023</p>
+                        <h4 class="text-2xl font-semibold text-white mt-0 mb-1">IT & Services Project Manager</h4>
+                        <p class="text-base font-light text-gray-400 mb-3">Northwell Health</p>
+                        <ul class="list-disc space-y-2 text-gray-300 ml-5 text-base">
+                            <li>Revenue & Product Strategy: Drove the product vision for critical Pharmacy Warehouse systems, directly supporting $106M in revenue growth.</li>
+                            <li>Digital Transformation: Led product backlog and sprint planning for 3 large-scale digital transformation initiatives, boosting project efficiency by 20% through rigorous Scrum implementation.</li>
+                            <li>Data-Driven Enhancement: Established data-driven product metrics to track adoption, identifying critical feature enhancement opportunities that maintained continuous alignment with business needs.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Role 3: Altice USA -->
+                    <div class="group py-4 border-b border-gray-800 hover:bg-[#161b22] transition duration-300 p-4 -mx-4 rounded-lg">
+                        <p class="text-sm font-semibold uppercase tracking-wider text-accent mb-1">Mar 2021 - Jan 2022</p>
+                        <h4 class="text-2xl font-semibold text-white mt-0 mb-1">Project Manager</h4>
+                        <p class="text-base font-light text-gray-400 mb-3">Altice USA</p>
+                        <ul class="list-disc space-y-2 text-gray-300 ml-5 text-base">
+                            <li>E-commerce Growth: Defined and prioritized product features for the Optimum Mobile e-commerce platform, contributing to 18.1% YoY growth to $23.8M.</li>
+                            <li>UX & Testing: Led A/B testing initiatives and data analysis to validate complex user requirements. Collaborated with UX teams to develop wireframes and user flows, enhancing overall user experience through beta testing.</li>
+                            <li>Agile Implementation: Implemented Kanban boards and streamlined product backlog management processes using JIRA, resulting in a 15% increase in team efficiency.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Role 4: UltraLinq Healthcare Solutions -->
+                    <div class="group py-4 border-b border-gray-800 hover:bg-[#161b22] transition duration-300 p-4 -mx-4 rounded-lg">
+                        <p class="text-sm font-semibold uppercase tracking-wider text-accent mb-1">Mar 2019 - Mar 2021</p>
+                        <h4 class="text-2xl font-semibold text-white mt-0 mb-1">Software Engineer / Scrum Master</h4>
+                        <p class="text-base font-light text-gray-400 mb-3">UltraLinq Healthcare Solutions, Inc. (Healthcare SaaS)</p>
+                        <ul class="list-disc space-y-2 text-gray-300 ml-5 text-base">
+                            <li>Technical Product Strategy: Led the product strategy and development of a key feature: integrating the OHIF Viewer to create a DICOM viewer with 3D capabilities, which drove $3.6M in revenue.</li>
+                            <li>DevOps Integration: Translated technical requirements related to infrastructure-as-code and DevOps into actionable product features, cutting deployment cycles by 25%.</li>
+                            <li>Customer Success: Designed KPI dashboards to monitor product adoption, enabling iterative updates that boosted customer satisfaction by 30%.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Role 5: Navrexa Pharmacy -->
+                    <div class="group py-4 border-b border-gray-800 hover:bg-[#161b22] transition duration-300 p-4 -mx-4 rounded-lg">
+                        <p class="text-sm font-semibold uppercase tracking-wider text-accent mb-1">Jun 2016 - Mar 2019</p>
+                        <h4 class="text-2xl font-semibold text-white mt-0 mb-1">Technical Program Manager / Scrum Master</h4>
+                        <p class="text-base font-light text-gray-400 mb-3">Navrexa Pharmacy</p>
+                        <ul class="list-disc space-y-2 text-gray-300 ml-5 text-base">
+                            <li>End-to-End Program Lead: Managed the product development lifecycle from initial vision to final implementation, scaling business revenue to over $1M.</li>
+                            <li>Technical Architecture: Created user stories and technical requirements for a critical API integration layer, which improved connection speed by 60% and data manipulation efficiency by 75%.</li>
+                            <li>Agile Tooling: Implemented Agile tools (JIRA, Confluence) for improved product backlog management, enhancing overall product delivery by 15%.</li>
+                        </ul>
                     </div>
                 </div>
+            </section>
 
-                <!-- Tools & Platforms -->
-                <div>
-                    <h4 class="text-xl font-semibold text-[#58a6ff] mb-4">Tools & Platforms</h4>
-                    <div class="flex flex-wrap gap-3">
-                        <span class="skill-pill">Jira</span>
-                        <span class="skill-pill">ServiceNow</span>
-                        <span class="skill-pill">Smartsheet</span>
-                        <span class="skill-pill">Confluence</span>
-                        <span class="skill-pill">AWS</span>
-                        <span class="skill-pill">Datadog</span>
-                        <span class="skill-pill">MS Project / Visio</span>
-                        <span class="skill-pill">Zendesk</span>
-                        <span class="skill-pill">Bitbucket</span>
-                    </div>
-                </div>
-
-                <!-- Technical/Languages -->
-                <div>
-                    <h4 class="text-xl font-semibold text-[#58a6ff] mb-4">Technical Background</h4>
-                    <div class="flex flex-wrap gap-3">
-                        <span class="skill-pill">Angular</span>
-                        <span class="skill-pill">HTML/CSS</span>
-                        <span class="skill-pill">C++</span>
-                        <span class="skill-pill">PHP</span>
-                        <span class="skill-pill">Visual Basic</span>
-                        <span class="skill-pill">Cloud & DevOps Familiarity</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Horizontal Rule -->
-        <div class="border-t border-gray-800 mb-24"></div>
-
-        <!-- 5. Education & Certifications Section -->
-        <section id="education" class="mb-24" data-section="education">
-            <h3 class="text-3xl font-bold text-white mb-8 border-b-2 border-[#58a6ff] inline-block pb-1">Education & Certifications</h3>
-
-            <div class="space-y-6">
-                <!-- Certification -->
-                <div class="bg-[#161b22] p-6 rounded-lg shadow-xl border border-gray-700">
-                    <p class="text-lg font-semibold text-[#58a6ff]">Certified SAFe 6 Scrum Master (SSM)</p>
-                    <p class="text-gray-300">Scaled Agile Framework</p>
-                </div>
-
-                <!-- Education -->
-                <div class="bg-[#161b22] p-6 rounded-lg shadow-xl border border-gray-700">
-                    <p class="text-lg font-semibold text-[#58a6ff]">Bachelor of Science in Computer Information Systems</p>
-                    <p class="text-gray-300">DeVry University</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Horizontal Rule -->
-        <div class="border-t border-gray-800 mb-24"></div>
-
-        <!-- 6. Contact Section -->
-        <section id="contact" data-section="contact">
-            <h3 class="text-3xl font-bold text-white mb-8 border-b-2 border-[#58a6ff] inline-block pb-1">Contact</h3>
-            
-            <p class="text-xl text-gray-300 mb-8 max-w-2xl">
-                I'm currently open to new opportunities and collaboration. Feel free to reach out via email or connect with me on LinkedIn.
-            </p>
-
-            <div class="space-y-4">
-                <!-- Email -->
-                <div class="flex items-center space-x-3 text-lg">
-                    <!-- Email Icon (Inline SVG) -->
-                    <svg class="w-6 h-6 text-[#58a6ff] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-1 12H4a2 2 0 01-2-2V6a2 2 0 012-2h16a2 2 0 012 2v12a2 2 0 01-2 2z"></path></svg>
-                    <a href="mailto:moejunaid2@gmail.com" class="text-gray-100 hover:text-[#58a6ff] transition duration-200">moejunaid2@gmail.com</a>
-                </div>
+            <!-- 3. Skills Section -->
+            <section id="skills" class="mb-24">
+                <h3 class="text-xl font-bold text-white mb-8">SKILLS & EXPERTISE</h3>
                 
-                <!-- Phone -->
-                <div class="flex items-center space-x-3 text-lg">
-                    <!-- Phone Icon (Inline SVG) -->
-                    <svg class="w-6 h-6 text-[#58a6ff] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 00.948.684l1.498 4.493a1 1 0 00.524.524l4.493 1.498a1 1 0 00.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
-                    <span class="text-gray-100">516-937-8135</span>
+                <div class="space-y-8">
+                    
+                    <!-- Core Competencies -->
+                    <div>
+                        <h4 class="text-lg font-semibold text-accent mb-4">Strategic & Program Leadership</h4>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="skill-pill">Digital Transformation</span>
+                            <span class="skill-pill">Agile Leadership (Scrum, SAFe)</span>
+                            <span class="skill-pill">Program & Portfolio Management</span>
+                            <span class="skill-pill">Change Management</span>
+                            <span class="skill-pill">Strategic Planning</span>
+                            <span class="skill-pill">Contract Negotiation</span>
+                        </div>
+                    </div>
+
+                    <!-- Tools & Platforms -->
+                    <div>
+                        <h4 class="text-lg font-semibold text-accent mb-4">Project Management Tools & Governance</h4>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="skill-pill">Jira</span>
+                            <span class="skill-pill">ServiceNow</span>
+                            <span class="skill-pill">Smartsheet</span>
+                            <span class="skill-pill">Confluence</span>
+                            <span class="skill-pill">MS Project / Visio</span>
+                            <span class="skill-pill">Datadog (Monitoring)</span>
+                            <span class="skill-pill">Zendesk / Clarity</span>
+                        </div>
+                    </div>
+
+                    <!-- Technical/Languages -->
+                    <div>
+                        <h4 class="text-lg font-semibold text-accent mb-4">Technical Background & Languages</h4>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="skill-pill">Cloud & DevOps Familiarity (AWS)</span>
+                            <span class="skill-pill">Angular</span>
+                            <span class="skill-pill">HTML/CSS</span>
+                            <span class="skill-pill">C++ / PHP</span>
+                            <span class="skill-pill">API Integration</span>
+                        </div>
+                    </div>
                 </div>
+            </section>
 
-                <!-- LinkedIn -->
-                <div class="flex items-center space-x-3 text-lg">
-                    <!-- LinkedIn Icon (Inline SVG - Placeholder for simple logo) -->
-                    <svg class="w-6 h-6 text-[#58a6ff] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-1.2-8.455-3.245L4 12V4m7 16l4-4m-4 4l-4-4"></path></svg>
-                    <a href="https://www.linkedin.com/in/muh-junaid/" target="_blank" rel="noopener noreferrer" class="text-gray-100 hover:text-[#58a6ff] transition duration-200">muh-junaid (LinkedIn)</a>
+            <!-- 4. Education & Certifications Section -->
+            <section id="education" class="mb-24">
+                <h3 class="text-xl font-bold text-white mb-8">EDUCATION & CERTIFICATIONS</h3>
+
+                <div class="space-y-6">
+                    <!-- Certification -->
+                    <div class="p-6 rounded-lg shadow-inner bg-[#161b22] border border-gray-700">
+                        <p class="text-lg font-semibold text-accent">Certified SAFe 6 Scrum Master (SSM)</p>
+                        <p class="text-gray-300">Scaled Agile Framework</p>
+                    </div>
+
+                    <!-- Education -->
+                    <div class="p-6 rounded-lg shadow-inner bg-[#161b22] border border-gray-700">
+                        <p class="text-lg font-semibold text-accent">Bachelor of Science in Computer Information Systems</p>
+                        <p class="text-gray-300">DeVry University</p>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-    </main>
 
-    <!-- Footer -->
-    <footer class="bg-[#161b22] py-8 border-t border-gray-800 mt-24">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm text-gray-500">
-            <p>&copy; 2024 Muhammad Junaid. All rights reserved.</p>
-        </div>
-    </footer>
+            <!-- Footer -->
+            <footer class="py-8 border-t border-gray-800 mt-12">
+                <div class="text-center text-sm text-gray-500">
+                    <p>&copy; 2024 Muhammad Junaid. Built in the spirit of modern, minimalist design.</p>
+                </div>
+            </footer>
+
+        </main>
+    </div>
 
     <!-- CSS for Skill Pills (Local Definition) -->
     <style>
         .skill-pill {
-            @apply inline-block px-4 py-2 text-sm font-medium rounded-full bg-gray-700 text-gray-100 hover:bg-[#58a6ff] hover:text-[#0d1117] transition duration-300 cursor-default;
+            @apply inline-block px-4 py-2 text-sm font-medium rounded-full bg-gray-700 text-gray-100 hover:bg-accent hover:text-[#0d1117] transition duration-300 cursor-default;
         }
     </style>
 
-
-    <!-- JavaScript for Active Navigation Link Highlighting -->
+    <!-- JavaScript for Active Navigation Link Highlighting (Sidebar) -->
     <script>
         const sections = document.querySelectorAll('section');
         const navLinks = document.querySelectorAll('.nav-link');
 
-        const observerOptions = {
+        // Observer options for detecting sections
+        const navObserverOptions = {
             root: null,
             rootMargin: '0px',
-            threshold: 0.5 // Highlight when 50% of the section is visible
+            threshold: 0.2 // Section considered active when 20% of it is visible
         };
 
-        const observer = new IntersectionObserver((entries, observer) => {
+        const navObserver = new IntersectionObserver((entries) => {
+            let visibleSectionId = null;
+            
+            // Find the highest visible section on the screen
             entries.forEach(entry => {
-                const sectionId = entry.target.id;
-                const navLink = document.querySelector(`.nav-link[data-section="${sectionId}"]`);
-                
-                if (navLink) {
-                    // Always clear existing active classes first
-                    navLinks.forEach(link => link.classList.remove('active-nav-link'));
-
-                    if (entry.isIntersecting) {
-                        // Add active class to the current link
-                        navLink.classList.add('active-nav-link');
+                if (entry.isIntersecting) {
+                    if (!visibleSectionId || entry.target.offsetTop < document.getElementById(visibleSectionId).offsetTop) {
+                        visibleSectionId = entry.target.id;
                     }
                 }
             });
-        }, observerOptions);
 
-        sections.forEach(section => {
-            observer.observe(section);
-        });
+            // If a visible section is found, update the links
+            if (visibleSectionId) {
+                navLinks.forEach(link => {
+                    link.classList.remove('text-white', 'text-accent');
+                    link.classList.add('text-gray-400');
+                    link.style.borderLeft = 'none'; 
+                    link.style.paddingLeft = '0';
+                });
 
-        // Ensure a link is active on page load (defaults to 'About' or 'Hero' content area)
-        window.onload = () => {
-             const defaultLink = document.querySelector('.nav-link[data-section="about"]');
-             if (defaultLink) {
-                defaultLink.classList.add('active-nav-link');
-             }
-        };
-    </script>
-
-</body>
-</html>
-
+                const activeLink = document.querySelector(`.nav-link[href="#${visibleSectionId}"]`);
+                if (activeLink) {
+                    activeLink.classList.remov
