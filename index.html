@@ -1,388 +1,366 @@
 <!DOCTYPE html>
-<html lang="en" style="scroll-behavior: smooth;">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muhammad Junaid, SSM | Project Manager</title>
-    <!-- Load Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* Custom Font Setup (Inter is preferred) */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0d1117; /* Dark background matching the theme */
-            color: #c9d1d9; /* Light text color for contrast */
-        }
-        /* Custom scrollbar to match dark theme */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-thumb {
-            background-color: #30363d;
-            border-radius: 10px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #161b22;
-        }
-        /* Style for the sticky nav link on active section */
-        .active-nav-link {
-            color: #58a6ff; /* A bright, professional accent color */
-            border-bottom: 2px solid #58a6ff;
-        }
-        /* Utility for experience timeline dot */
-        .timeline-dot::before {
-            content: '';
-            position: absolute;
-            left: -1.75rem; /* Adjust based on padding/margin */
-            top: 0.5rem;
-            width: 0.75rem;
-            height: 0.75rem;
-            background-color: #58a6ff;
-            border-radius: 50%;
-            z-index: 10;
-        }
-        /* Utility for experience timeline line */
-        .timeline-item:not(:last-child) {
-            border-left: 2px solid #30363d;
-            margin-left: -0.125rem;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Muhammad Junaid, SSM — Technical Program Manager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#0a2540;
+    --paper-deep:#071b30;
+    --ink:#eef3f8;
+    --ink-dim:#a9bdd2;
+    --line:#1d3f63;
+    --line-bright:#3a6694;
+    --signal:#ff7a3d;
+    --signal-dim:#c95f2e;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:48px 48px;
+    background-attachment:fixed;
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+  }
+  h1,h2,h3,h4,.disp{font-family:'Space Grotesk',sans-serif;}
+  .mono{font-family:'IBM Plex Mono',monospace;}
+  a{color:inherit;}
+  .wrap{max-width:920px;margin:0 auto;padding:0 24px;}
+
+  /* nav */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(7,27,48,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  nav .wrap{display:flex;justify-content:space-between;align-items:center;height:64px;}
+  .brand{font-weight:600;letter-spacing:0.02em;font-size:1.05rem;text-decoration:none;}
+  .brand .dot{color:var(--signal);}
+  .navlinks{display:flex;gap:28px;}
+  .navlinks a{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.78rem;letter-spacing:0.08em;text-transform:uppercase;
+    color:var(--ink-dim);text-decoration:none;
+    padding-bottom:4px;border-bottom:1px solid transparent;
+    transition:color .2s, border-color .2s;
+  }
+  .navlinks a:hover, .navlinks a.active{color:var(--ink);border-color:var(--signal);}
+  @media(max-width:680px){.navlinks{display:none;}}
+
+  /* sheet label */
+  .sheet-label{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;
+    color:var(--signal);display:flex;align-items:center;gap:10px;margin-bottom:14px;
+  }
+  .sheet-label::before{content:'';width:18px;height:1px;background:var(--signal);display:inline-block;}
+
+  section{padding:96px 0;border-bottom:1px solid var(--line);}
+  section:last-of-type{border-bottom:none;}
+
+  /* hero */
+  .hero{padding-top:120px;padding-bottom:110px;}
+  .hero h1{font-size:clamp(2.4rem,6vw,4.2rem);line-height:1.05;font-weight:700;margin:0 0 18px;}
+  .hero .role{font-size:clamp(1.1rem,2.4vw,1.5rem);color:var(--ink-dim);font-weight:400;margin:0 0 28px;}
+  .hero p.lede{font-size:1.1rem;color:var(--ink-dim);max-width:560px;line-height:1.65;}
+  .crosshair{position:relative;display:inline-block;}
+  .crosshair::before,.crosshair::after{content:'';position:absolute;background:var(--signal);}
+  .btnrow{display:flex;gap:16px;margin-top:36px;flex-wrap:wrap;}
+  .btn{
+    font-family:'IBM Plex Mono',monospace;font-size:0.8rem;letter-spacing:0.05em;
+    padding:13px 24px;border:1px solid var(--line-bright);text-decoration:none;
+    transition:all .2s;
+  }
+  .btn.solid{background:var(--signal);color:var(--paper-deep);border-color:var(--signal);font-weight:600;}
+  .btn.solid:hover{background:#ff9460;}
+  .btn.outline:hover{border-color:var(--signal);color:var(--signal);}
+
+  h3.h-title{font-size:1.8rem;font-weight:600;margin:0 0 36px;}
+
+  /* about */
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;}
+  @media(max-width:680px){.about-grid{grid-template-columns:1fr;}}
+  .about-grid p{color:var(--ink-dim);line-height:1.75;font-size:1.02rem;}
+  .specs{
+    font-family:'IBM Plex Mono',monospace;font-size:0.82rem;color:var(--ink-dim);
+    border-left:1px solid var(--line-bright);padding-left:20px;display:grid;gap:14px;align-content:start;
+  }
+  .specs div span{color:var(--ink);display:block;font-size:0.95rem;margin-top:2px;}
+
+  /* experience: blueprint schematic timeline */
+  .tl{position:relative;padding-left:34px;}
+  .tl::before{
+    content:'';position:absolute;left:6px;top:6px;bottom:6px;width:0;
+    border-left:1px dashed var(--line-bright);
+  }
+  .role{position:relative;margin-bottom:56px;}
+  .role:last-child{margin-bottom:0;}
+  .role::before{
+    content:'';position:absolute;left:-34px;top:6px;width:13px;height:13px;
+    border:1px solid var(--signal);background:var(--paper);
+    transform:rotate(45deg);
+  }
+  .role.current::before{background:var(--signal);}
+  .role .meta{display:flex;flex-wrap:wrap;gap:14px;align-items:baseline;margin-bottom:8px;}
+  .role .dates{font-family:'IBM Plex Mono',monospace;font-size:0.78rem;color:var(--signal);letter-spacing:0.04em;}
+  .role .badge{font-family:'IBM Plex Mono',monospace;font-size:0.68rem;color:var(--ink-dim);border:1px solid var(--line-bright);padding:2px 8px;letter-spacing:0.06em;}
+  .role h4{font-size:1.3rem;margin:0 0 2px;font-weight:600;}
+  .role .org{color:var(--ink-dim);font-size:0.95rem;margin:0 0 14px;font-style:normal;}
+  .role p.desc{color:var(--ink-dim);line-height:1.7;margin:0 0 14px;font-size:0.98rem;}
+  .role ul{list-style:none;margin:0;padding:0;border-top:1px solid var(--line);padding-top:12px;display:grid;gap:8px;}
+  .role ul li{
+    font-family:'IBM Plex Mono',monospace;font-size:0.82rem;color:var(--ink);
+    padding-left:18px;position:relative;line-height:1.5;
+  }
+  .role ul li::before{content:'+';position:absolute;left:0;color:var(--signal);}
+
+  /* projects */
+  .card{border:1px solid var(--line-bright);background:rgba(255,255,255,0.02);padding:32px;}
+  .card h4{font-size:1.3rem;margin:0 0 12px;font-weight:600;}
+  .card p{color:var(--ink-dim);line-height:1.7;margin:0 0 20px;}
+  .card img{width:100%;border:1px solid var(--line);display:block;margin-bottom:20px;}
+  .card .btnrow{margin-top:0;}
+
+  /* skills */
+  .skillblock{margin-bottom:32px;}
+  .skillblock h4{font-family:'IBM Plex Mono',monospace;font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--signal);margin:0 0 16px;}
+  .pills{display:flex;flex-wrap:wrap;gap:10px;}
+  .pill{
+    font-family:'IBM Plex Mono',monospace;font-size:0.78rem;color:var(--ink);
+    border:1px solid var(--line-bright);padding:7px 14px;
+  }
+
+  /* contact */
+  .contact-box{border:1px solid var(--line-bright);padding:48px;text-align:left;position:relative;}
+  .contact-box::before{content:'';position:absolute;top:-1px;left:-1px;width:14px;height:14px;border-top:2px solid var(--signal);border-left:2px solid var(--signal);}
+  .contact-box::after{content:'';position:absolute;bottom:-1px;right:-1px;width:14px;height:14px;border-bottom:2px solid var(--signal);border-right:2px solid var(--signal);}
+  .contact-box h3{font-size:1.9rem;margin:0 0 14px;}
+  .contact-box p{color:var(--ink-dim);margin:0 0 28px;max-width:480px;line-height:1.6;}
+
+  footer{padding:32px 0;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:0.72rem;color:var(--ink-dim);letter-spacing:0.05em;}
+</style>
 </head>
+<body>
 
-<body class="antialiased">
+<nav>
+  <div class="wrap">
+    <a href="#hero" class="brand">M. JUNAID<span class="dot">.</span></a>
+    <div class="navlinks">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
 
-    <!-- Sticky Navigation Bar -->
-    <nav id="nav-bar" class="sticky top-0 z-50 bg-[#0d1117]/95 backdrop-blur-sm shadow-xl border-b border-gray-800">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-3">
-            <div class="flex justify-between items-center h-10">
-                <a href="#hero" class="text-xl font-bold text-[#58a6ff] hover:text-white transition duration-300">
-                    M. Junaid
-                </a>
-                <div class="hidden sm:flex space-x-6 text-sm font-medium">
-                    <a href="#about" class="nav-link hover:text-[#58a6ff] transition duration-200" data-section="about">About</a>
-                    <a href="#experience" class="nav-link hover:text-[#58a6ff] transition duration-200" data-section="experience">Experience</a>
-                    <a href="#skills" class="nav-link hover:text-[#58a6ff] transition duration-200" data-section="skills">Skills</a>
-                    <a href="#contact" class="nav-link hover:text-[#58a6ff] transition duration-200" data-section="contact">Contact</a>
-                </div>
-            </div>
+<main>
+
+  <section id="hero" class="hero">
+    <div class="wrap">
+      <p class="sheet-label">SHEET 01 / 05 — PROFILE</p>
+      <h1>Muhammad Junaid<br><span style="color:var(--ink-dim);font-weight:500;">SSM, SAFe&nbsp;6</span></h1>
+      <p class="role">Technical Program & Product Manager</p>
+      <p class="lede">10+ years directing enterprise system integrations and cross-functional engineering programs across healthcare and telecom — cutting onboarding cycle times 35%, scaling robotics throughput 45%, and generating $3.5M in new revenue from scoping through production.</p>
+      <div class="btnrow">
+        <a href="#experience" class="btn solid">View Experience</a>
+        <a href="mailto:moejunaid2@gmail.com" class="btn outline">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <p class="sheet-label">SHEET 02 / 05 — SUMMARY</p>
+      <h3 class="h-title">About</h3>
+      <div class="about-grid">
+        <p>I work the seam between technical execution and business outcome — directing engineering delivery, release planning, and risk management across multi-team programs in healthcare and telecom. I sit close to Engineering, DevOps, and Product, translating operational requirements into technical specs and keeping complex programs on schedule and on budget from scoping through production.</p>
+        <div class="specs">
+          <div>FOCUS<span>Healthcare · Telecom · Robotics</span></div>
+          <div>FRAMEWORKS<span>SAFe 6 · Agile · Waterfall · Hybrid</span></div>
+          <div>EDUCATION<span>MBA, UMGC · BS CIS, DeVry</span></div>
+          <div>CERTS<span>SAFe 6 Scrum Master · PMI AI (in progress)</span></div>
         </div>
-    </nav>
-    
-    <main class="container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 pt-10 pb-20">
+      </div>
+    </div>
+  </section>
 
-        <!-- 1. Hero Section -->
-        <section id="hero" class="min-h-[50vh] flex flex-col justify-center items-start text-left mb-24 pt-16" data-section="hero">
-            <p class="text-lg text-[#58a6ff] mb-4 font-semibold uppercase tracking-widest">
-                Hello, I'm
-            </p>
-            <h1 class="text-5xl sm:text-7xl font-extrabold leading-tight text-white mb-4">
-                Muhammad Junaid, <span class="text-[#58a6ff]">SSM</span>.
-            </h1>
-            <h2 class="text-3xl sm:text-4xl font-light text-gray-400 mb-6">
-                Agile Project & Program Manager
-            </h2>
-            <p class="text-xl max-w-3xl text-gray-300">
-                8+ years of experience driving digital transformation and delivering enterprise-scale projects in SaaS and B2B environments. Passionate about strategic planning, Agile leadership, and optimizing product delivery.
-            </p>
-            <div class="mt-8 flex space-x-4">
-                <a href="#experience" class="bg-[#58a6ff] hover:bg-[#4a8cd6] text-[#0d1117] font-bold py-3 px-6 rounded-lg transition duration-300 shadow-lg">
-                    View My Work
-                </a>
-                <a href="mailto:moejunaid2@gmail.com" class="border border-[#58a6ff] text-[#58a6ff] hover:bg-[#58a6ff]/10 font-bold py-3 px-6 rounded-lg transition duration-300">
-                    Get in Touch
-                </a>
-            </div>
-        </section>
+  <section id="experience">
+    <div class="wrap">
+      <p class="sheet-label">SHEET 03 / 05 — RECORD</p>
+      <h3 class="h-title">Experience</h3>
 
-        <!-- Horizontal Rule -->
-        <div class="border-t border-gray-800 mb-24"></div>
+      <div class="tl">
 
-
-        <!-- 2. About/Summary Section -->
-        <section id="about" class="mb-24" data-section="about">
-            <h3 class="text-3xl font-bold text-white mb-8 border-b-2 border-[#58a6ff] inline-block pb-1">About Me</h3>
-            <div class="bg-[#161b22] p-8 rounded-xl shadow-2xl">
-                <p class="text-xl leading-relaxed text-gray-300">
-                    With over eight years of experience, I excel at bridging the gap between technical requirements and strategic business outcomes. My expertise is rooted in implementing Agile frameworks like SAFe, Scrum, and Kanban to boost efficiency and accelerate delivery in complex enterprise settings, resulting in measurable business growth and process optimization.
-                </p>
-                <p class="text-xl leading-relaxed text-gray-300 mt-4">
-                    I thrive on leading cross-functional teams, focusing on change management, and leveraging data-driven insights through tools like Jira, ServiceNow, and Datadog. I am committed to mentorship, strategic planning, and ensuring every project aligns perfectly with the overarching product vision and business goals.
-                </p>
-            </div>
-        </section>
-
-        <!-- Horizontal Rule -->
-        <div class="border-t border-gray-800 mb-24"></div>
-
-        <!-- 3. Experience Section (Timeline) -->
-        <section id="experience" class="mb-24" data-section="experience">
-            <h3 class="text-3xl font-bold text-white mb-12 border-b-2 border-[#58a6ff] inline-block pb-1">Experience</h3>
-            <div class="space-y-12 relative">
-
-                <!-- Role 1: UMMS - Enterprise Security Delivery & Agile Governance -->
-                    <div class="group py-4 border-b border-gray-800 hover:bg-[#161b22] transition duration-300 p-4 -mx-4 rounded-lg">
-                        <p class="text-sm font-semibold uppercase tracking-wider text-accent mb-1">Mar 2024 - Present</p>
-                        <h4 class="text-2xl font-semibold text-white mt-0 mb-1">Information Security & Technology Project Manager</h4>
-                        <p class="text-base font-light text-gray-400 mb-3">University of Maryland Medical System (Contract)</p>
-                        
-                        <p class="text-lg leading-relaxed text-gray-300 mb-4">
-                            My current mandate involves overseeing enterprise security and technology projects within a demanding SAFe environment. I specialize in providing Agile governance for four concurrent projects, ensuring rigorous security compliance while driving process maturity. I implemented advanced Agile practices, including PI planning and backlog refinement using Smartsheet, to streamline the delivery pipeline.
-                        </p>
-                        <p class="text-lg leading-relaxed text-gray-300">
-                             A key strategic initiative was defining the product vision for and managing the technical rollout of the Cority platform to modernize critical security and onboarding processes.
-                        </p>
-
-                        <div class="mt-4 text-sm text-gray-400 border-l-2 border-accent pl-3">
-                            <p>— Accelerated product development efficiency by 50%.</p>
-                            <p>— Developed a centralized reporting dashboard for leadership, providing real-time KPI visibility.</p>
-                            <p>— Improved new hire retention by 15% following Cority platform rollout.</p>
-                        </div>
-                    </div>
-
-                    <!-- Role 2: Northwell Health - Product Strategy & High-Value Digital Transformation -->
-                    <div class="group py-4 border-b border-gray-800 hover:bg-[#161b22] transition duration-300 p-4 -mx-4 rounded-lg">
-                        <p class="text-sm font-semibold uppercase tracking-wider text-accent mb-1">Jan 2022 - Nov 2023</p>
-                        <h4 class="text-2xl font-semibold text-white mt-0 mb-1">IT & Services Project Manager</h4>
-                        <p class="text-base font-light text-gray-400 mb-3">Northwell Health</p>
-
-                        <p class="text-lg leading-relaxed text-gray-300 mb-4">
-                            As a Project Manager, I drove the product vision for core Pharmacy Warehouse systems, a critical function supporting organizational growth. I applied rigorous Scrum implementation to accelerate three large-scale digital transformation initiatives, focusing on continuous alignment between development outcomes and strategic business needs through frequent stakeholder reviews and product demos.
-                        </p>
-                        <p class="text-lg leading-relaxed text-gray-300">
-                             A primary focus was establishing data-driven product metrics to track feature adoption and performance, enabling proactive identification of enhancements.
-                        </p>
-
-                        <div class="mt-4 text-sm text-gray-400 border-l-2 border-accent pl-3">
-                            <p>— Supported $106M in revenue growth by optimizing Pharmacy Warehouse systems.</p>
-                            <p>— Increased project delivery efficiency across initiatives by 20%.</p>
-                        </div>
-                    </div>
-
-                    <!-- Role 3: Altice USA - E-commerce Platform Optimization & Growth -->
-                    <div class="group py-4 border-b border-gray-800 hover:bg-[#161b22] transition duration-300 p-4 -mx-4 rounded-lg">
-                        <p class="text-sm font-semibold uppercase tracking-wider text-accent mb-1">Mar 2021 - Jan 2022</p>
-                        <h4 class="text-2xl font-semibold text-white mt-0 mb-1">Project Manager</h4>
-                        <p class="text-base font-light text-gray-400 mb-3">Altice USA</p>
-
-                        <p class="text-lg leading-relaxed text-gray-300 mb-4">
-                            My role centered on driving growth and technical execution for the Optimum Mobile e-commerce platform. I implemented Kanban boards and streamlined product backlog management using JIRA, increasing the technical team's throughput. Crucially, I led A/B testing and data analysis initiatives, collaborating directly with UX teams to validate user requirements and inform product decisions using wireframes and user flows.
-                        </p>
-
-                        <div class="mt-4 text-sm text-gray-400 border-l-2 border-accent pl-3">
-                            <p>— Contributed to 18.1% YoY growth, scaling platform revenue to $23.8M.</p>
-                            <p>— Boosted team efficiency by 15% through improved Kanban implementation.</p>
-                        </div>
-                    </div>
-
-                    <!-- Role 4: UltraLinq Healthcare Solutions - Technical Product Leadership & SaaS Development -->
-                    <div class="group py-4 border-b border-gray-800 hover:bg-[#161b22] transition duration-300 p-4 -mx-4 rounded-lg">
-                        <p class="text-sm font-semibold uppercase tracking-wider text-accent mb-1">Mar 2019 - Mar 2021</p>
-                        <h4 class="text-2xl font-semibold text-white mt-0 mb-1">Software Engineer / Scrum Master</h4>
-                        <p class="text-base font-light text-gray-400 mb-3">UltraLinq Healthcare Solutions, Inc. (Healthcare SaaS)</p>
-
-                        <p class="text-lg leading-relaxed text-gray-300 mb-4">
-                            In this dual-role, I spearheaded product strategy for our healthcare SaaS platform, translating complex technical requirements (including infrastructure-as-code and DevOps principles) into high-value product features. The most significant project was leading the integration of the OHIF Viewer to develop a best-in-class DICOM viewer with 3D capabilities.
-                        </p>
-                        <p class="text-lg leading-relaxed text-gray-300">
-                             I also designed KPI dashboards to monitor product adoption, ensuring continuous, data-driven iterative updates.
-                        </p>
-
-                        <div class="mt-4 text-sm text-gray-400 border-l-2 border-accent pl-3">
-                            <p>— Feature development drove $3.6M in direct revenue.</p>
-                            <p>— Reduced deployment cycles by 25% by integrating technical requirements into product features.</p>
-                            <p>— Increased customer satisfaction by 30% via iterative updates informed by KPI monitoring.</p>
-                        </div>
-                    </div>
-
-                    <!-- Role 5: Navrexa Pharmacy - Foundational Program Development & API Architecture -->
-                    <div class="group py-4 border-b border-gray-800 hover:bg-[#161b22] transition duration-300 p-4 -mx-4 rounded-lg">
-                        <p class="text-sm font-semibold uppercase tracking-wider text-accent mb-1">Jun 2016 - Mar 2019</p>
-                        <h4 class="text-2xl font-semibold text-white mt-0 mb-1">Technical Program Manager / Scrum Master</h4>
-                        <p class="text-base font-light text-gray-400 mb-3">Navrexa Pharmacy</p>
-
-                        <p class="text-lg leading-relaxed text-gray-300 mb-4">
-                            This foundational role involved managing the entire product development lifecycle, from initial concept to implementation. I successfully set up and managed essential Agile tooling (JIRA, Confluence) to structure the product backlog and improve team visibility. My technical focus included creating user stories and requirements for a critical API integration layer designed to streamline data manipulation.
-                        </p>
-
-                        <div class="mt-4 text-sm text-gray-400 border-l-2 border-accent pl-3">
-                            <p>— Scaled business revenue to over $1M from the ground up.</p>
-                            <p>— Improved connection speed by 60% and data manipulation efficiency by 75% via API development.</p>
-                            <p>— Enhanced overall product delivery by 15% through Agile tooling implementation.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-        <!-- Horizontal Rule -->
-
-        <div class="border-t border-gray-800 mb-24"></div>
-
-
-                <section id="projects" class="mb-24" data-section="projects">
-            <h3 class="text-3xl font-bold text-white mb-8 border-b-2 border-[#58a6ff] inline-block pb-1">AI & Digital Projects</h3>
-            
-            <div class="bg-[#161b22] p-8 rounded-xl shadow-2xl border border-gray-700">
-                <h4 class="text-2xl font-semibold text-white mb-3">RAG PM Assistant: Context-Aware Product Chatbot</h4>
-                <p class="text-lg leading-relaxed text-gray-300 mb-4">
-                    A Retrieval-Augmented Generation (RAG) application built with LangChain and Streamlit to demonstrate advanced product management in the Generative AI space. This tool serves as a PM Assistant, answering complex, document-specific questions by referencing a defined "knowledge base" of fictional product specs and pricing guides.
-                </p>
-
-                <a href="https://github.com/Mjunaid931/PM-Assistant/" target="_blank" rel="noopener noreferrer" class="block mb-6 relative group">
-                                        <img src="https://github.com/Mjunaid931/PM-Assistant/blob/main/Screenshot%202025-10-10%20013254.png?raw=true" 
-                         alt="Screenshot of the RAG PM Assistant Streamlit Chatbot Interface" 
-                         class="w-full h-auto rounded-lg shadow-xl border border-gray-600 transition duration-300 transform group-hover:scale-[1.01] group-hover:shadow-2xl"/>
-                    <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-20 transition duration-300 rounded-lg"></div>
-                </a>
-
-                <div class="flex space-x-4">
-                    <a href="https://github.com/Mjunaid931/PM-Assistant/" target="_blank" rel="noopener noreferrer" class="bg-[#58a6ff] hover:bg-[#4a8cd6] text-[#0d1117] font-bold py-2 px-4 rounded-lg transition duration-300 shadow-lg flex items-center">
-                        View GitHub Repo
-                    </a>
-                    <a href="https://github.com/Mjunaid931/PM-Assistant/blob/main/PRD.md" target="_blank" rel="noopener noreferrer" class="border border-gray-500 text-gray-200 hover:bg-gray-700/50 font-bold py-2 px-4 rounded-lg transition duration-300 flex items-center">
-                        View Case Study
-                    </a>
-                </div>
-
-            </div>
-        </section>
-        <div class="border-t border-gray-800 mb-24"></div>
-
-        <!-- 4. Skills Section -->
-        <section id="skills" class="mb-24" data-section="skills">
-            <h3 class="text-3xl font-bold text-white mb-8 border-b-2 border-[#58a6ff] inline-block pb-1">Core Skills & Technologies</h3>
-            
-            <div class="space-y-8">
-                
-                <!-- Core Competencies -->
-                <div>
-                    <h4 class="text-xl font-semibold text-[#58a6ff] mb-4">Core Competencies</h4>
-                    <div class="flex flex-wrap gap-3">
-                        <span class="skill-pill">Digital Transformation</span>
-                        <span class="skill-pill">Agile Leadership (Scrum, SAFe)</span>
-                        <span class="skill-pill">Program & Portfolio Management</span>
-                        <span class="skill-pill">Change Management</span>
-                        <span class="skill-pill">Strategic Planning</span>
-                        <span class="skill-pill">Cross-Functional Team Leadership</span>
-                        <span class="skill-pill">Risk & Compliance Management</span>
-                        <span class="skill-pill">Contract Negotiation</span>
-                    </div>
-                </div>
-
-                <!-- Tools & Platforms -->
-                <div>
-                    <h4 class="text-xl font-semibold text-[#58a6ff] mb-4">Tools & Platforms</h4>
-                    <div class="flex flex-wrap gap-3">
-                        <span class="skill-pill">Jira</span>
-                        <span class="skill-pill">ServiceNow</span>
-                        <span class="skill-pill">Smartsheet</span>
-                        <span class="skill-pill">Confluence</span>
-                        <span class="skill-pill">AWS</span>
-                        <span class="skill-pill">Datadog</span>
-                        <span class="skill-pill">MS Project / Visio</span>
-                        <span class="skill-pill">Zendesk</span>
-                        <span class="skill-pill">Bitbucket</span>
-                    </div>
-                </div>
-
-                <!-- Technical/Languages -->
-                <div>
-                    <h4 class="text-xl font-semibold text-[#58a6ff] mb-4">Technical Background</h4>
-                    <div class="flex flex-wrap gap-3">
-                        <span class="skill-pill">Angular</span>
-                        <span class="skill-pill">HTML/CSS</span>
-                        <span class="skill-pill">C++</span>
-                        <span class="skill-pill">PHP</span>
-                        <span class="skill-pill">Visual Basic</span>
-                        <span class="skill-pill">Cloud & DevOps Familiarity</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Horizontal Rule -->
-        <div class="border-t border-gray-800 mb-24"></div>
-
-        <!-- 5. Education & Certifications Section -->
-        <section id="education" class="mb-24" data-section="education">
-            <h3 class="text-3xl font-bold text-white mb-8 border-b-2 border-[#58a6ff] inline-block pb-1">Education & Certifications</h3>
-
-            <div class="space-y-6">
-                <!-- Certification -->
-                <div class="bg-[#161b22] p-6 rounded-lg shadow-xl border border-gray-700">
-                    <p class="text-lg font-semibold text-[#58a6ff]">Certified SAFe 6 Scrum Master (SSM)</p>
-                    <p class="text-gray-300">Scaled Agile Framework</p>
-                </div>
-
-                <!-- Education -->
-                <div class="bg-[#161b22] p-6 rounded-lg shadow-xl border border-gray-700">
-                    <p class="text-lg font-semibold text-[#58a6ff]">Bachelor of Science in Computer Information Systems</p>
-                    <p class="text-gray-300">DeVry University</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Horizontal Rule -->
-        <div class="border-t border-gray-800 mb-24"></div>
-
-        <!-- 6. Contact Section -->
-        <section id="contact" data-section="contact">
-            <h3 class="text-3xl font-bold text-white mb-8 border-b-2 border-[#58a6ff] inline-block pb-1">Contact</h3>
-            
-            <p class="text-xl text-gray-300 mb-8 max-w-2xl">
-                I'm currently open to new opportunities and collaboration. Feel free to reach out via email or connect with me on LinkedIn.
-            </p>
-
-            <div class="space-y-4">
-                <!-- Email -->
-                <div class="flex items-center space-x-3 text-lg">
-                    <!-- Email Icon (Inline SVG) -->
-                    <svg class="w-6 h-6 text-[#58a6ff] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-1 12H4a2 2 0 01-2-2V6a2 2 0 012-2h16a2 2 0 012 2v12a2 2 0 01-2 2z"></path></svg>
-                    <a href="mailto:moejunaid2@gmail.com" class="text-gray-100 hover:text-[#58a6ff] transition duration-200">moejunaid2@gmail.com</a>
-                </div>
-                
-                <!-- Phone -->
-                <div class="flex items-center space-x-3 text-lg">
-                    <!-- Phone Icon (Inline SVG) -->
-                    <svg class="w-6 h-6 text-[#58a6ff] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 00.948.684l1.498 4.493a1 1 0 00.524.524l4.493 1.498a1 1 0 00.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
-                    <span class="text-gray-100">516-937-8135</span>
-                </div>
-
-                <!-- LinkedIn -->
-                <div class="flex items-center space-x-3 text-lg">
-                    <!-- LinkedIn Icon (Inline SVG - Placeholder for simple logo) -->
-                    <svg class="w-6 h-6 text-[#58a6ff] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-1.2-8.455-3.245L4 12V4m7 16l4-4m-4 4l-4-4"></path></svg>
-                    <a href="https://www.linkedin.com/in/muh-junaid/" target="_blank" rel="noopener noreferrer" class="text-gray-100 hover:text-[#58a6ff] transition duration-200">muh-junaid (LinkedIn)</a>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-[#161b22] py-8 border-t border-gray-800 mt-24">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm text-gray-500">
-            <p>&copy; 2024 Muhammad Junaid. All rights reserved.</p>
+        <div class="role">
+          <div class="meta">
+            <span class="dates">MAR 2024 — JUN 2026</span>
+          </div>
+          <h4>IT Project Manager II / Product Lead</h4>
+          <p class="org">University of Maryland Medical System</p>
+          <p class="desc">Managed engineering delivery schedules for the multi-phase Cority Employee Health Platform rollout, coordinated integration schedules connecting Cority with Epic Beaker, Quest, and CribMaster, and owned release planning for the Infor Web Apps consolidation across HR and Finance.</p>
+          <ul>
+            <li>Cut onboarding cycle times by 35% across thousands of personnel</li>
+            <li>Achieved sub-2-second data sync, cutting integration errors by 25%</li>
+            <li>Kept downtime below 0.5% during major platform updates</li>
+            <li>Led 3CLogic–ServiceNow integration, cutting help desk ticket volume by 30%</li>
+            <li>Built executive Power BI dashboards for real-time program health and risk visibility</li>
+          </ul>
         </div>
-    </footer>
 
-    <!-- CSS for Skill Pills (Local Definition) -->
-    <style>
-        .skill-pill {
-            @apply inline-block px-4 py-2 text-sm font-medium rounded-full bg-gray-700 text-gray-100 hover:bg-[#58a6ff] hover:text-[#0d1117] transition duration-300 cursor-default;
-        }
-    </style>
+        <div class="role">
+          <div class="meta"><span class="dates">JAN 2022 — NOV 2023</span></div>
+          <h4>IT & Services Project Manager / Technical Product Manager</h4>
+          <p class="org">Northwell Health</p>
+          <p class="desc">Managed software delivery scope, schedule, and risk for 340B drug pricing and healthcare robotics programs, and led hardware/software integration for Parata (BD) automated pharmacy robotics, working directly with engineering on system-level design.</p>
+          <ul>
+            <li>Maintained a 99.8% audit compliance rating</li>
+            <li>Scaled operational throughput by 45% on robotics systems</li>
+            <li>Reduced scope churn mid-sprint via backlog vetting and dependency mapping</li>
+            <li>Protected go-live dates by flagging schedule slippage early across the portfolio</li>
+          </ul>
+        </div>
 
+        <div class="role">
+          <div class="meta"><span class="dates">MAR 2021 — JAN 2022</span></div>
+          <h4>Project Manager / Product Lead</h4>
+          <p class="org">Altice USA</p>
+          <p class="desc">Owned the technical go-to-market rollout for new devices on the Optimum Mobile platform and coordinated beta testers across regions for the Altice One launch, working directly with engineering on customer feedback and roadmap.</p>
+          <ul>
+            <li>Drove a 15% increase in online device sales within two quarters via A/B-tested ad creative</li>
+            <li>Cut development debt by 35% and unresolved tickets in half using SQL-based root cause analysis</li>
+          </ul>
+        </div>
 
-    <!-- JavaScript for Active Navigation Link Highlighting -->
-    <script>
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('.nav-link');
+        <div class="role">
+          <div class="meta"><span class="dates">MAR 2019 — MAR 2021</span></div>
+          <h4>Software Engineer / Product Manager</h4>
+          <p class="org">UltraLinq Healthcare Solutions — Healthcare SaaS</p>
+          <p class="desc">Introduced the OHIF Viewer with new radiology tools and directed the technical roadmap for 3D DICOM capabilities, while deploying AWS infrastructure with CloudFormation and load balancing and managing the DevOps release pipeline in Jira.</p>
+          <ul>
+            <li>Generated $3.5M in revenue while keeping the build HIPAA compliant</li>
+            <li>Delivered 99.9% application uptime</li>
+            <li>Cut deployment time from days to hours, reducing post-release bugs by 22%</li>
+          </ul>
+        </div>
 
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.5 // Highlight when 50% of the section is visible
-        };
+        <div class="role">
+          <div class="meta"><span class="dates">JUN 2016 — MAR 2019</span></div>
+          <h4>Technical Product Manager / Scrum Master</h4>
+          <p class="org">Navrexa Pharmacy</p>
+          <p class="desc">Managed the end-to-end software delivery lifecycle from inception to over $1M in revenue, owning scope, schedule, and vendor relationships under strict SLA governance, and worked hands-on with engineering to architect an authenticated API integration layer.</p>
+          <ul>
+            <li>Improved platform performance by 60%</li>
+            <li>Increased sprint velocity by 20% running agile ceremonies in Jira</li>
+          </ul>
+        </div>
 
-        const observer = new IntersectionObserver((entries, observer) => {
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <p class="sheet-label">SHEET 04 / 05 — BUILD LOG</p>
+      <h3 class="h-title">AI & Digital Projects</h3>
+      <div class="card">
+        <h4>RAG PM Assistant — Context-Aware Product Chatbot</h4>
+        <img src="https://github.com/Mjunaid931/PM-Assistant/blob/main/Screenshot%202025-10-10%20013254.png?raw=true" alt="Screenshot of the RAG PM Assistant Streamlit Chatbot Interface">
+        <p>A Retrieval-Augmented Generation app built with LangChain and Streamlit, acting as a PM assistant that answers document-specific questions against a knowledge base of product specs and pricing guides.</p>
+        <div class="btnrow">
+          <a href="https://github.com/Mjunaid931/PM-Assistant/" target="_blank" rel="noopener noreferrer" class="btn solid">View GitHub Repo</a>
+          <a href="https://github.com/Mjunaid931/PM-Assistant/blob/main/PRD.md" target="_blank" rel="noopener noreferrer" class="btn outline">View Case Study</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <p class="sheet-label">SHEET 05 / 05 — SPECIFICATION</p>
+      <h3 class="h-title">Core Skills & Technologies</h3>
+
+      <div class="skillblock">
+        <h4>Core Competencies</h4>
+        <div class="pills">
+          <span class="pill">Technical Program Management</span>
+          <span class="pill">Cross-Functional Coordination</span>
+          <span class="pill">Release & Milestone Management</span>
+          <span class="pill">Risk & Critical Path Management</span>
+          <span class="pill">Agile / SAFe 6 / Waterfall / Hybrid</span>
+          <span class="pill">System-Level Technical Design</span>
+          <span class="pill">DevOps Practices</span>
+          <span class="pill">Stakeholder & External Partner Communication</span>
+          <span class="pill">Executive Reporting</span>
+        </div>
+      </div>
+
+      <div class="skillblock">
+        <h4>Tools & Platforms</h4>
+        <div class="pills">
+          <span class="pill">Jira / Jira Align</span>
+          <span class="pill">Smartsheet</span>
+          <span class="pill">Power BI</span>
+          <span class="pill">ServiceNow</span>
+          <span class="pill">AWS / Azure / GCP</span>
+          <span class="pill">CloudFormation</span>
+          <span class="pill">SQL</span>
+          <span class="pill">Confluence</span>
+        </div>
+      </div>
+
+      <div class="skillblock">
+        <h4>Technical Background</h4>
+        <div class="pills">
+          <span class="pill">API Integration</span>
+          <span class="pill">DevOps / Release Pipelines</span>
+          <span class="pill">Multi-Cloud Infrastructure</span>
+          <span class="pill">Sprint Metrics</span>
+          <span class="pill">HTML / CSS</span>
+          <span class="pill">C++</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" style="border-bottom:none;">
+    <div class="wrap">
+      <div class="contact-box">
+        <h3>Let's talk.</h3>
+        <p>Open to Technical Program Manager, Product Manager, and Director of Operations roles across AI/SaaS, healthtech, and enterprise software.</p>
+        <div class="btnrow">
+          <a href="mailto:moejunaid2@gmail.com" class="btn solid">moejunaid2@gmail.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>© 2026 MUHAMMAD JUNAID — DRAWN TO SCALE</footer>
+
+<script>
+  const links = document.querySelectorAll('.navlinks a');
+  const sections = document.querySelectorAll('main section');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      const rect = s.getBoundingClientRect();
+      if (rect.top <= 120 && rect.bottom > 120) current = s.id;
+    });
+    links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current));
+  });
+</script>
+
+</body>
+</html>
